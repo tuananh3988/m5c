@@ -1,31 +1,16 @@
 <?php
 namespace common\models;
-
 use Yii;
 use yii\base\Model;
-
 /**
  * Login form
  */
 class LoginForm extends Model
 {
-    public $id;
+    public $username;
     public $password;
     public $rememberMe = true;
-
     private $_user;
-
-
-    /**
-     * @inheritdoc
-     */
-    public function attributeLabels() {
-        return [
-            'id' => 'id',
-            'password' => 'password',
-        ];
-    }
-    
     /**
      * @inheritdoc
      */
@@ -33,15 +18,13 @@ class LoginForm extends Model
     {
         return [
             // username and password are both required
-            [['id','password'], 'required'],
-            [['password'], 'string', 'max' => 255],
+            [['username', 'password'], 'required'],
             // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
             ['password', 'validatePassword'],
         ];
     }
-
     /**
      * Validates the password.
      * This method serves as the inline validation for password.
@@ -58,7 +41,6 @@ class LoginForm extends Model
             }
         }
     }
-
     /**
      * Logs in a user using the provided username and password.
      *
@@ -72,7 +54,6 @@ class LoginForm extends Model
             return false;
         }
     }
-
     /**
      * Finds user by [[username]]
      *
@@ -81,9 +62,8 @@ class LoginForm extends Model
     protected function getUser()
     {
         if ($this->_user === null) {
-            $this->_user = User::findByUsername($this->id);
+            $this->_user = User::findByUsername($this->username);
         }
-
         return $this->_user;
     }
 }
