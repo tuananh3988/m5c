@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use common\models\BaseModel;
 
 /**
  * This is the model class for table "users".
@@ -19,7 +20,7 @@ use Yii;
  * @property string $create_date
  * @property string $update_date
  */
-class Users extends \yii\db\ActiveRecord
+class Users extends BaseModel
 {
     /**
      * @inheritdoc
@@ -35,10 +36,13 @@ class Users extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['password', 'email', 'phone', 'name', 'status'], 'required'],
+            [['password', 'email', 'phone', 'name', 'status'], 'required', 'message' => \Yii::t('app', 'required')],
             [['status', 'parent_id', 'level'], 'integer'],
             [['create_date', 'update_date'], 'safe'],
-            [['password', 'email', 'phone', 'name', 'adress'], 'string', 'max' => 255]
+            [['password', 'email', 'phone', 'name', 'adress'], 'string', 'max' => 255],
+            [['email'], 'email', 'message' => \Yii::t('app', 'format')],
+            ['phone', 'isNumeric'],
+            [['password'], 'string', 'min' => 6, 'tooShort' => 'Please enter more than 6 characters']
         ];
     }
 
@@ -60,5 +64,17 @@ class Users extends \yii\db\ActiveRecord
             'create_date' => 'Create Date',
             'update_date' => 'Update Date',
         ];
+    }
+    
+    /*
+     * @Auth Nguyen Van Hien (nguyenvanhienbk2006@gmail.com)
+     * Create Date : 27/05/2016
+     */
+    
+    public function isNumeric($attribute)
+    {
+        if (!is_numeric($this->phone)){
+            $this->addError($attribute, Yii::t('app', 'format number' ,['attribute' => $this->attributeLabels()[$attribute]]));
+        }
     }
 }

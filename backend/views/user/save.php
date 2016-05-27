@@ -22,35 +22,40 @@ Yii::$app->view->title = 'Add User';
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <?= Html::activeTextInput($model, 'name', ['id' => 'name', 'class' => 'form-control col-md-7 col-xs-12']); ?>
+                                <?= Html::activeTextInput($model, 'name', ['id' => 'name', 'class' => 'form-control col-md-7 col-xs-12 '.$model->getClassField('name')]); ?>
+                                <p class="fTextAssist_bottom txtWarning"><?= $model->getMgsError(['name']); ?></p>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Email <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <?= Html::activeTextInput($model, 'email', ['id' => 'email', 'class' => 'form-control col-md-7 col-xs-12']); ?>
+                                <?= Html::activeTextInput($model, 'email', ['id' => 'email', 'class' => 'form-control col-md-7 col-xs-12 '.$model->getClassField('email')]); ?>
+                                <p class="fTextAssist_bottom txtWarning"><?= $model->getMgsError(['email']); ?></p>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="phone">Phone <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <?= Html::activeTextInput($model, 'phone', ['id' => 'phone', 'class' => 'form-control col-md-7 col-xs-12']); ?>
+                                <?= Html::activeTextInput($model, 'phone', ['id' => 'phone', 'class' => 'form-control col-md-7 col-xs-12 '.$model->getClassField('phone')]); ?>
+                                <p class="fTextAssist_bottom txtWarning"><?= $model->getMgsError(['phone']); ?></p>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="adress">Adress
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <?= Html::activeTextInput($model, 'adress', ['id' => 'adress', 'class' => 'form-control col-md-7 col-xs-12']); ?>
+                                <?= Html::activeTextInput($model, 'adress', ['id' => 'adress', 'class' => 'form-control col-md-7 col-xs-12 '.$model->getClassField('adress')]); ?>
+                                <p class="fTextAssist_bottom txtWarning"><?= $model->getMgsError(['adress']); ?></p>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="password">Password <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <?= Html::activePasswordInput($model, 'password', ['class' => 'form-control']); ?>
+                                <?= Html::activePasswordInput($model, 'password', ['class' => 'form-control '.$model->getClassField('password')]); ?>
+                                <p class="fTextAssist_bottom txtWarning"><?= $model->getMgsError(['password']); ?></p>
                             </div>
                         </div>
                         <div class="ln_solid"></div>

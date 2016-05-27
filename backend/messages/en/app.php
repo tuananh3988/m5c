@@ -8,5 +8,7 @@
 
 return[
     'required' => 'Please enter your {attribute}',
-    'validation staffs' => 'Invalid username or password.'
+    'validation staffs' => 'Invalid username or password.',
+    'format' => '{attribute} is not correct.',
+    'format number' => '{attribute} must be numeric.',
 ];

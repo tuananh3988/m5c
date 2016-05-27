@@ -17,3 +17,10 @@ and open the template in the editor.
 .txtWarning ul {
     list-style-type: none;
 }
+.error_input{
+    border: 1px solid red;
+}
+.fTextAssist_bottom.txtWarning{
+    display: inline-block;
+    padding-top: 10px;
+}

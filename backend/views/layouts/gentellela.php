@@ -37,6 +37,7 @@ AppAsset::register($this);
 
     <!-- Custom Theme Style -->
     <link href="<?= Url::base(); ?>/build/css/custom.min.css" rel="stylesheet">
+    <link href="<?= Url::base(); ?>/css/custom.css" rel="stylesheet">
     
 </head>
 <body class="nav-md">
