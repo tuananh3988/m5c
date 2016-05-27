@@ -8,7 +8,7 @@ use common\models\Staffs;
  */
 class LoginForm extends Model
 {
-    public $id;
+    public $username;
     public $password;
     public $rememberMe = true;
 
@@ -28,7 +28,7 @@ class LoginForm extends Model
     public function rules()
     {
         return [
-            [['id','password'], 'required', 'message' => \Yii::t('app', 'required')],
+            [['username','password'], 'required', 'message' => \Yii::t('app', 'required')],
             [['password'], 'string', 'max' => 255],
             ['rememberMe', 'boolean'],
             ['password', 'validatePassword'],
@@ -41,7 +41,7 @@ class LoginForm extends Model
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
+            'username' => 'Username',
             'password' => 'Password',
         ];
     }
@@ -58,7 +58,7 @@ class LoginForm extends Model
         if (!$this->hasErrors()) {
             $user = $this->getUser();
             if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, \Yii::t('app', 'validation use'));
+                $this->addError($attribute, \Yii::t('app', 'validation staffs'));
             }
         }
     }
@@ -85,7 +85,7 @@ class LoginForm extends Model
     protected function getUser()
     {
         if ($this->_user === null) {
-            $this->_user = Staffs::findByUsername($this->id);
+            $this->_user = Staffs::findByUsername($this->username);
         }
 
         return $this->_user;

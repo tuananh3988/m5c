@@ -30,9 +30,9 @@ class Staffs extends \yii\db\ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            [['id','password'], 'required'],
-            [['id', 'auth_key'], 'integer'],
-            [['password'], 'string', 'max' => 255],
+            [['username', 'name', 'password'], 'required'],
+            [['auth_key'], 'integer'],
+            [['username', 'name', 'password'], 'string', 'max' => 255],
             ['rememberMe', 'boolean'],
             ['password', 'validatePassword'],
         ];
@@ -45,6 +45,8 @@ class Staffs extends \yii\db\ActiveRecord implements IdentityInterface
     {
         return [
             'id' => 'ID',
+            'username' => 'Username',
+            'name' => 'Name',
             'password' => 'Password',
             'auth_key' => 'Auth Key',
         ];
@@ -74,7 +76,7 @@ class Staffs extends \yii\db\ActiveRecord implements IdentityInterface
      */
     public static function findByUsername($username)
     {
-        return static::findOne(['id' => $username]);
+        return static::findOne(['username' => $username]);
     }
 
     /**

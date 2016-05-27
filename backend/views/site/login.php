@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         <?php endif; ?>
         <div>
-            <?= Html::activeTextInput($model, 'id', ['class' => 'form-control', 'placeholder' => 'Id']); ?>
+            <?= Html::activeTextInput($model, 'username', ['class' => 'form-control', 'placeholder' => 'Username']); ?>
         </div>
         <div>
             <?= Html::activePasswordInput($model, 'password', ['class' => 'form-control', 'placeholder' => 'Password', 'id' => 'password']); ?>

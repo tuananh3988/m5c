@@ -8,5 +8,5 @@
 
 return[
     'required' => 'Please enter your {attribute}',
-    'validation use' => 'Invalid id or password.'
+    'validation staffs' => 'Invalid username or password.'
 ];

@@ -10,6 +10,7 @@ return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
+    'defaultRoute' => 'site',
     'bootstrap' => ['log'],
     'modules' => [],
     'language' => 'en',
@@ -36,6 +37,7 @@ return [
             'showScriptName' => false,
             'rules' => [
                 'login' => 'site/login',
+                'logout' => 'site/logout',
             ],
         ],
         
