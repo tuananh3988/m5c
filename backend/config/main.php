@@ -12,9 +12,10 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [],
+    'language' => 'en',
     'components' => [
         'user' => [
-            'identityClass' => 'common\models\Backend',
+            'identityClass' => 'common\models\Staffs',
             'enableAutoLogin' => true,
         ],
         'log' => [

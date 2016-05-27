@@ -4,7 +4,7 @@ namespace backend\controllers;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
-use common\models\Staffs;
+use backend\models\LoginForm;
 use yii\filters\VerbFilter;
 
 /**
@@ -66,7 +66,7 @@ class SiteController extends Controller
             return $this->goHome();
         }
 
-        $model = new Staffs();
+        $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         } else {
