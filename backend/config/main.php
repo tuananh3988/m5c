@@ -12,9 +12,10 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [],
+    'language' => 'en',
     'components' => [
         'user' => [
-            'identityClass' => 'common\models\User',
+            'identityClass' => 'common\models\Staffs',
             'enableAutoLogin' => true,
         ],
         'log' => [
@@ -34,6 +35,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'login' => 'site/login',
             ],
         ],
         
