@@ -64,7 +64,7 @@ AppAsset::register($this);
                   </li>
                   <li><a><i class="fa fa-users"></i> Users <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="form.html">New User</a></li>
+                      <li><a href="<?= Url::to(['/user/save']) ?>">New User</a></li>
                     </ul>
                   </li>
                 </ul>

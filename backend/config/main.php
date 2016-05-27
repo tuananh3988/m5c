@@ -11,6 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'defaultRoute' => 'site',
+    'layout' => 'gentellela',
     'bootstrap' => ['log'],
     'modules' => [],
     'language' => 'en',
@@ -38,6 +39,7 @@ return [
             'rules' => [
                 'login' => 'site/login',
                 'logout' => 'site/logout',
+                'user/add' => 'user/save',
             ],
         ],
         
