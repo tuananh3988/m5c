@@ -31,14 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div style="color:#999;margin:1em 0">
                 If you forgot your password you can <?= Html::a('reset it', ['site/request-password-reset']) ?>.
             </div>
-            
-            <?php if(Yii::$app->session->hasFlash('LoginFail')){ ?>
-                <div class="alert alert-danger">Oops! That username and password is incorrect! Please try again! </div>
-            <?php } ?>
-            <!-- Kiem tra Login thanh cong thi hien thi len -->
-            <?php if(Yii::$app->session->hasFlash('LoginOK')){ ?>
-                <div class="alert alert-success">Login Success!</div>
-            <?php } ?>    
+
             <br>
             
             <div class="form-group">

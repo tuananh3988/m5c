@@ -9,8 +9,11 @@ $params = array_merge(
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    'bootstrap' => ['log'],
+    'defaultRoute' => 'site',
+    'modules' => [],
+    'language' => 'en',
     'components' => [
         'user' => [
             'identityClass' => 'common\models\Users',
@@ -28,14 +31,23 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
+        
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'login' => 'site/login',
+                'logout' => 'site/logout',
             ],
         ],
-        */
+//        
+//        'request' => [
+//            'baseUrl' => '/user',
+//            'enableCookieValidation' => true,
+//            'enableCsrfValidation' => true,
+//            'cookieValidationKey' => 'xxxxxxx',
+//        ],
+        
     ],
     'params' => $params,
 ];
